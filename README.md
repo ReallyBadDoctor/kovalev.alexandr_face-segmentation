@@ -8,6 +8,7 @@
 А также датасет с аугментированными руками, о которых будет рассказано ниже
 
 [CelebAHand-face dataset](https://drive.google.com/file/d/1BSqPgUhK8Bhwz68yahwFq0iDcFsIDYwr/view?usp=sharing)
+
 [CelebAHand-mask dataset](https://drive.google.com/file/d/1qKVpC4qJAhVW4HRFgHrtcAsJA0aMyezz/view?usp=sharing)
 
 2. `prepropess_data.py` был взят из репозитория, указанного в ТЗ, затем переписан так, чтобы лицо получало значение 255, а все остальные объекты получали значение 0.
@@ -34,8 +35,9 @@ python train.py --batch_size <number> --faces_dir <your path> --masks_dir <your 
 <p align="center">
 	<img src="./examples/Before_aug.png" alt="Original Input">
 </p>
-    В попытках решить данную проблему было принято решение использовать кусочек Egohand dataset с кропнутыми руками и наложенными масками.
-    [EgoHands dataset](https://public.roboflow.com/object-detection/hands)  
+    В попытках решить данную проблему было принято решение использовать кусочек [EgoHands dataset](https://public.roboflow.com/object-detection/hands) 
+    с кропнутыми руками и наложенными масками.
+    
 <table>
 
 <tr>
