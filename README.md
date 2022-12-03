@@ -5,7 +5,7 @@
 ### Подготовка данных 
 1. Был использован датасет [CelebAMask-HQ dataset](https://github.com/switchablenorms/CelebAMask-HQ)
 
-А также датасет с аугментированными руками, о которых будет рассказано ниже
+А также датасет с самостоятельно аугментированными руками, о которых будет рассказано нижe.
 
 [CelebAHand-face dataset](https://drive.google.com/file/d/1BSqPgUhK8Bhwz68yahwFq0iDcFsIDYwr/view?usp=sharing)
 
@@ -75,3 +75,7 @@ python train.py --batch_size <number> --faces_dir <your path> --masks_dir <your 
 
 Как итог данный подход смог показать себя на тестовых данных с моим лицом не так хорошо, как хотелось, но руку модель все же научилась обходить хотя бы частично.
 <img src="./examples/After_aug.png" alt="Original Input">
+
+Итоговый датасет с руками уже прикреплен в [Подготовке данных](#Подготовка данных) и проводить аугментацию вручную заново не нужно. 
+Но если вам интересен сам процесс того, как я это делал, то необходимый код находится в `hand_generator.ipynb`
+
