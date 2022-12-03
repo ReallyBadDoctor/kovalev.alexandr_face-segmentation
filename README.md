@@ -26,8 +26,7 @@ python train.py --batch_size <number> --faces_dir <your path> --masks_dir <your 
 <p align="center">
 	<img src="./examples/Before_aug.png" alt="Original Input">
 </p>
-    В попытках решить данную проблему было принято решение использовать кусочек [EgoHands dataset](https://public.roboflow.com/object-detection/hands) 
-    с кропнутыми руками и наложенными масками 
+    В попытках решить данную проблему было принято решение использовать кусочек [EgoHands dataset](https://public.roboflow.com/object-detection/hands) с кропнутыми руками и наложенными масками 
 <table>
 
 <tr>
