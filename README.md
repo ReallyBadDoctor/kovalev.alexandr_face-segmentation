@@ -13,7 +13,8 @@ python preprocess_data.py --masks_parts <your path> --output_mask <your path>
 ### Обучение
 Из-за отсутсвия requirements.txt файла в репозитории в ТЗ запуск обучения оказался крайне мучительным, поэтому было принято решение
 самостоятельно написать модель для сегментации изображения. За основу архитектуры был взят ResNet50.
-    Подробнее с архитектурой вы можете ознакомиться в файле `train.py`.
+**Архитектура**:
+<img src="./examples/architecture.PNG" alt="Original Input">
     Скрипт для запуска обучения:
 ```
 python train.py --batch_size <number> --faces_dir <your path> --masks_dir <your path> --fahand_dir <your path> --mahand_dir <your path> --weights_dir <your path>
@@ -26,7 +27,8 @@ python train.py --batch_size <number> --faces_dir <your path> --masks_dir <your 
 <p align="center">
 	<img src="./examples/Before_aug.png" alt="Original Input">
 </p>
-    В попытках решить данную проблему было принято решение использовать кусочек [EgoHands dataset](https://public.roboflow.com/object-detection/hands) с кропнутыми руками и наложенными масками 
+    В попытках решить данную проблему было принято решение использовать кусочек [EgoHands dataset](https://public.roboflow.com/object-detection/hands) 
+    с кропнутыми руками и наложенными масками 
 <table>
 
 <tr>
