@@ -33,7 +33,7 @@ python train.py --batch_size <number> --faces_dir <your path> --masks_dir <your 
 ### Аугментация
 1. После завершения обучения было выявлено, что рука также распознается как лицо. 
 <p align="center">
-	<img src="./examples/Before_aug.png" alt="Original Input">
+	<img src="./examples/before_aug.png" alt="Original Input">
 </p>
     В попытках решить данную проблему было принято решение использовать кусочек [EgoHands dataset](https://public.roboflow.com/object-detection/hands) 
     с кропнутыми руками и наложенными масками.
@@ -74,7 +74,7 @@ python train.py --batch_size <number> --faces_dir <your path> --masks_dir <your 
 </table>
 
 Как итог данный подход смог показать себя на тестовых данных с моим лицом не так хорошо, как хотелось, но руку модель все же научилась обходить хотя бы частично.
-<img src="./examples/After_aug.png" alt="Original Input">
+<img src="./examples/after_aug.png" alt="Original Input">
 
 Итоговый датасет с руками уже прикреплен в разделе Подготовка данных и проводить аугментацию вручную заново не нужно. 
 Но если вам интересен сам процесс того, как я это делал, то необходимый код находится в `hand_generator.ipynb`
