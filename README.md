@@ -1,5 +1,5 @@
 # face-segmentation by Ковалёв Александр Евгеньевич
-
+![Ooops. There must be a gif](./examples/myface.gif)
 ## Последовательное описание решения
 
 ### Подготовка данных 
