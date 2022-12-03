@@ -87,3 +87,9 @@ python train.py --batch_size <number> --faces_dir <your path> --masks_dir <your 
    [Обучение без аугментации](https://drive.google.com/file/d/1yPdTrzTOd1VB5sv3tHsdNhZ6ZbxMKrwL/view?usp=sharing)
 
    [Обучение с аугментацией](https://drive.google.com/file/d/1uMSdmYEQXb6wNaq_Bd461B0nDlFJxL_a/view?usp=sharing)
+2. На вход подается изображение, на выходе получается бинарная маска. Использовались не 0 и 1, а 0 и 255 для лучшей визуализации.
+ 
+Скрипт для прогона изображения/изображений. 
+```
+python test.py --weights_path <your path> --images_path <your path> --save_path <your path>
+```
