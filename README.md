@@ -13,6 +13,7 @@ python preprocess_data.py --masks_parts <your path> --output_mask <your path>
 ### Обучение
 Из-за отсутсвия requirements.txt файла в репозитории в ТЗ запуск обучения оказался крайне мучительным, поэтому было принято решение
 самостоятельно написать модель для сегментации изображения. За основу архитектуры был взят ResNet50.
+
 **Архитектура**:
 <img src="./examples/architecture.PNG" alt="Original Input">
     Скрипт для запуска обучения:
@@ -63,3 +64,6 @@ python train.py --batch_size <number> --faces_dir <your path> --masks_dir <your 
 </tr>
 
 </table>
+
+Как итог данный подход смог показать себя на тестовых данных с моим лицом не так хорошо, как хотелось, но руку модель все же научилась обходить хотя бы частично.
+<img src="./examples/After_aug.png" alt="Original Input">
