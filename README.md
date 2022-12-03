@@ -79,3 +79,11 @@ python train.py --batch_size <number> --faces_dir <your path> --masks_dir <your 
 Итоговый датасет с руками уже прикреплен в [Подготовке данных](#Подготовка данных) и проводить аугментацию вручную заново не нужно. 
 Но если вам интересен сам процесс того, как я это делал, то необходимый код находится в `hand_generator.ipynb`
 
+### Ошибка
+
+### Тест
+1. Для теста вы можете использовать один из наборов весов:
+
+   [Обучение без аугментации](https://drive.google.com/file/d/1yPdTrzTOd1VB5sv3tHsdNhZ6ZbxMKrwL/view?usp=sharing)
+
+   [Обучение с аугментацией](https://drive.google.com/file/d/1uMSdmYEQXb6wNaq_Bd461B0nDlFJxL_a/view?usp=sharing)
