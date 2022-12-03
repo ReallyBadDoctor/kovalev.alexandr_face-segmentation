@@ -4,6 +4,12 @@
 
 ### Подготовка данных 
 1. Был использован датасет [CelebAMask-HQ dataset](https://github.com/switchablenorms/CelebAMask-HQ)
+
+А также датасет с аугментированными руками, о которых будет рассказано ниже
+
+[CelebAHand-face dataset](https://drive.google.com/file/d/1BSqPgUhK8Bhwz68yahwFq0iDcFsIDYwr/view?usp=sharing)
+
+[CelebAHand-mask dataset](https://drive.google.com/file/d/1qKVpC4qJAhVW4HRFgHrtcAsJA0aMyezz/view?usp=sharing)
 2. `prepropess_data.py` был взят из репозитория, указанного в ТЗ, затем переписан так, чтобы лицо получало значение 255, а все остальные объекты получали значение 0.
     Используйте этот скрипт по форме, чтобы запустить генерацию масок в установленном формате: 
 ```
