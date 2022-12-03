@@ -24,9 +24,7 @@ python train.py --batch_size <number> --faces_dir <your path> --masks_dir <your 
 ### Аугментация
 После завершения обучения было выявлено, что рука также распознается как лицо. 
 <p align="center">
-	<a href="https://github.com/ReallyBadDoctor/kovalev.alexandr_face-segmentation">
-    <img class="page-image" src="https://github.com/ReallyBadDoctor/kovalev.alexandr_face-segmentation/examples/Before_aug.png" >
-	</a>
+	<img src="./examples/Before_aug.png" alt="Original Input"></td>
 </p>
 В попытках решить данную проблему было принято решение использовать кусочек EgoHands dataset с кропнутыми руками и наложенными масками 
 <table>
