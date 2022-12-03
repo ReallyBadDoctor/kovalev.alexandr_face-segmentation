@@ -11,7 +11,7 @@
 
 [CelebAHand-mask dataset](https://drive.google.com/file/d/1qKVpC4qJAhVW4HRFgHrtcAsJA0aMyezz/view?usp=sharing)
 
-2. `prepropess_data.py` был взят из репозитория, указанного в ТЗ, затем переписан так, чтобы лицо получало значение 255, а все остальные объекты получали значение 0.
+2. `prepropess_data.py` был взят из репозитория, указанного в ТЗ, затем переписан так, чтобы лицо и его элементы получало значение 255, а все остальные объекты получали значение 0.
     Используйте этот скрипт по форме, чтобы запустить генерацию масок в установленном формате: 
 ```
 python preprocess_data.py --masks_parts <your path> --output_mask <your path>
