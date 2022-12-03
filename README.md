@@ -37,8 +37,8 @@ python train.py --batch_size <number> --faces_dir <your path> --masks_dir <your 
 
 <tr>
 <td><em>Example</em></td>
-<td><img src="./examples/hand_no_mask.png" alt="Original Input"></td>
-<td><img src="./examples/hand_masked.jpg" alt="Original Input"></td>
+<td><img src="./examples/hand_no_mask.jpg" alt="Original Input"></td>
+<td><img src="./examples/hand_masked.png" alt="Original Input"></td>
 </tr>
 
 </table>
