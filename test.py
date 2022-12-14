@@ -30,40 +30,42 @@ w_path = args.w_path
 im_path = args.im_path
 save_path = args.save_path
 
-base_model = ResNet50(weights='imagenet', input_shape=[512, 512, 3], include_top=False, classes=1)
-inp = base_model.get_layer('input_1').output
+def model_creation():
+    base_model = ResNet50(weights='imagenet', input_shape=[512, 512, 3], include_top=False, classes=1)
+    inp = base_model.get_layer('input_1').output
 
-conv_1 = base_model.get_layer('conv1_relu').output
-conv_2 = base_model.get_layer('conv2_block3_out').output
-conv_3 = base_model.get_layer('conv3_block4_out').output
-conv_4 = base_model.get_layer('conv4_block6_out').output
-conv_5 = base_model.get_layer('conv5_block3_out').output
+    conv_1 = base_model.get_layer('conv1_relu').output
+    conv_2 = base_model.get_layer('conv2_block3_out').output
+    conv_3 = base_model.get_layer('conv3_block4_out').output
+    conv_4 = base_model.get_layer('conv4_block6_out').output
+    conv_5 = base_model.get_layer('conv5_block3_out').output
 
-up_1 = UpSampling2D(2, interpolation='bilinear')(conv_5)
-conc_1 = Concatenate()([up_1, conv_4])
-conv_conc_1 = Conv2D(1028, (3, 3), padding='same')(conc_1)
-conv_conc_1 = Activation('relu')(conv_conc_1)
+    up_1 = UpSampling2D(2, interpolation='bilinear')(conv_5)
+    conc_1 = Concatenate()([up_1, conv_4])
+    conv_conc_1 = Conv2D(1028, (3, 3), padding='same')(conc_1)
+    conv_conc_1 = Activation('relu')(conv_conc_1)
 
-up_2 = UpSampling2D(2, interpolation='bilinear')(conv_conc_1)
-conc_2 = Concatenate()([up_2, conv_3])
-conv_conc_2 = Conv2D(514, (3, 3), padding='same')(conc_2)
-conv_conc_2 = Activation('relu')(conv_conc_2)
+    up_2 = UpSampling2D(2, interpolation='bilinear')(conv_conc_1)
+    conc_2 = Concatenate()([up_2, conv_3])
+    conv_conc_2 = Conv2D(514, (3, 3), padding='same')(conc_2)
+    conv_conc_2 = Activation('relu')(conv_conc_2)
 
-up_3 = UpSampling2D(2, interpolation='bilinear')(conv_conc_2)
-conc_3 = Concatenate()([up_3, conv_2])
-conv_conc_3 = Conv2D(256, (3, 3), padding='same')(conc_3)
-conv_conc_3 = Activation('relu')(conv_conc_3)
+    up_3 = UpSampling2D(2, interpolation='bilinear')(conv_conc_2)
+    conc_3 = Concatenate()([up_3, conv_2])
+    conv_conc_3 = Conv2D(256, (3, 3), padding='same')(conc_3)
+    conv_conc_3 = Activation('relu')(conv_conc_3)
 
-up_4 = UpSampling2D(2, interpolation='bilinear')(conv_conc_3)
-conc_4 = Concatenate()([up_4, conv_1])
-conv_conc_4 = Conv2D(64, (3, 3), padding='same')(conc_4)
-conv_conc_4 = Activation('relu')(conv_conc_4)
+    up_4 = UpSampling2D(2, interpolation='bilinear')(conv_conc_3)
+    conc_4 = Concatenate()([up_4, conv_1])
+    conv_conc_4 = Conv2D(64, (3, 3), padding='same')(conc_4)
+    conv_conc_4 = Activation('relu')(conv_conc_4)
 
-up_5 = UpSampling2D(2, interpolation='bilinear')(conv_conc_4)
-conv_up_5 = Conv2D(1, (3, 3), padding='same')(up_5)
-result = Activation('sigmoid')(conv_up_5)
+    up_5 = UpSampling2D(2, interpolation='bilinear')(conv_conc_4)
+    conv_up_5 = Conv2D(1, (3, 3), padding='same')(up_5)
+    result = Activation('sigmoid')(conv_up_5)
+    return Model(base_model.input, result)
 
-model = Model(base_model.input, result)
+model = model_creation()
 model.load_weights(w_path)
 
 files = [f for f in listdir(im_path) if isfile(join(im_path, f))]
